@@ -14,7 +14,7 @@
         </el-input>
       </el-form-item> -->
 
-      <el-form-item label="结课时间">
+      <el-form-item label="班级结束时间">
         <el-date-picker
           v-model="endDate"
           clearable
@@ -51,23 +51,23 @@
         </el-form-item>
 
 
-        <el-form-item label="* 开课时间" >
+        <el-form-item label="* 开班时间" >
           <el-date-picker
             v-model="cls.begin"
             clearable
             type="date"
-            placeholder="请选择开课时间"
+            placeholder="请选择开班时间"
             size="small"
             style="width:100%"
           ></el-date-picker>
         </el-form-item>
         
-        <el-form-item label="* 结课时间">
+        <el-form-item label="* 班级结束时间">
           <el-date-picker
             v-model="cls.end"
             clearable
             type="date"
-            placeholder="请选择结课时间"
+            placeholder="请选择班级结束时间"
             size="small"
             style="width:100%"
           ></el-date-picker>
@@ -102,8 +102,8 @@
         <el-table-column type="selection" width="55"  align="center"></el-table-column>
         <el-table-column  prop="className"  label="班级名称"  align="center"></el-table-column>
         <el-table-column prop="classRoom" label="班级教室" align="center"></el-table-column>
-        <el-table-column prop="begin" label="开课时间" align="center"></el-table-column>
-        <el-table-column prop="end" label="结课时间" align="center"></el-table-column>
+        <el-table-column prop="begin" label="开班时间" align="center"></el-table-column>
+        <el-table-column prop="end" label="班级结束时间" align="center"></el-table-column>
         <el-table-column prop="classTeacherId" label="班主任" align="center" :formatter="formatTeacherName"></el-table-column>
 
 
