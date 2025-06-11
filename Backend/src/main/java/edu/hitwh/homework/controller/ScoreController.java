@@ -19,17 +19,17 @@ public class ScoreController {
     @Autowired
     private ScoreService scoreService;
 
-    // 分页查询，支持按学生姓名、课程ID和考试时间查询
+    // 分页查询，支持按学生ID、课程ID和考试时间查询
     @GetMapping
     public Result page(@RequestParam(defaultValue = "1") Integer page,
                        @RequestParam(defaultValue = "10") Integer pageSize,
-                       String studentName,
+                       Integer studentId,
                        Integer courseId,
                        @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate examTime) {
 
-        log.info("分页查询成绩：(page, pageSize, studentName, courseId, examTime) = ({},{},{},{},{})",
-                page, pageSize, studentName, courseId, examTime);
-        PageBean pageBean = scoreService.page(page, pageSize, studentName, courseId, examTime);
+        log.info("分页查询成绩：(page, pageSize, studentId, courseId, examTime) = ({},{},{},{},{})",
+                page, pageSize, studentId, courseId, examTime);
+        PageBean pageBean = scoreService.page(page, pageSize, studentId, courseId, examTime);
         return Result.success(pageBean);
     }
 

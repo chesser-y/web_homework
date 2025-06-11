@@ -9,15 +9,14 @@ import java.util.List;
 
 @Mapper
 public interface ScoreMapper {
-
     /**
      * 分页条件查询
-     * @param studentName 学生姓名
+     * @param studentId 学生ID
      * @param courseId 课程ID
      * @param examTime 考试时间
      * @return 成绩列表
      */
-    List<Score> list(String studentName, Integer courseId, LocalDate examTime);
+    List<Score> list(Integer studentId, Integer courseId, LocalDate examTime);
 
     /**
      * 新增成绩

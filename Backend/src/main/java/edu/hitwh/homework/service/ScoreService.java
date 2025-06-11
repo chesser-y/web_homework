@@ -7,17 +7,16 @@ import java.time.LocalDate;
 import java.util.List;
 
 public interface ScoreService {
-
     /**
      * 分页查询成绩
      * @param page 起始页码
      * @param pageSize 每页获取的数据量
-     * @param studentName 学生姓名 可模糊查询
+     * @param studentId 学生ID 精确查询
      * @param courseId 课程ID 精确查询
      * @param examTime 考试时间 精确查询
      * @return 分页结果
      */
-    PageBean page(Integer page, Integer pageSize, String studentName, Integer courseId, LocalDate examTime);
+    PageBean page(Integer page, Integer pageSize, Integer studentId, Integer courseId, LocalDate examTime);
 
     /**
      * 新增成绩

@@ -10,8 +10,8 @@
         from score s
         left join stu stu on s.student_id = stu.id
         <where>
-            <if test="studentName != null and studentName != ''">
-                and stu.student_name like concat('%',#{studentName},'%')
+            <if test="studentId != null">
+                and s.student_id = #{studentId}
             </if>
             <if test="courseId != null">
                 and s.course_id = #{courseId}

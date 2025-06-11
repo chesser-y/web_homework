@@ -21,12 +21,12 @@ public class ScoreServiceImpl implements ScoreService {
     private ScoreMapper scoreMapper;
 
     @Override
-    public PageBean page(Integer page, Integer pageSize, String studentName, Integer courseId, LocalDate examTime) {
+    public PageBean page(Integer page, Integer pageSize, Integer studentId, Integer courseId, LocalDate examTime) {
         // 1. 设置分页参数
         PageHelper.startPage(page, pageSize);
 
         // 2. 执行分页查询
-        List<Score> scoreList = scoreMapper.list(studentName, courseId, examTime);
+        List<Score> scoreList = scoreMapper.list(studentId, courseId, examTime);
 
         // 3. 获取分页信息
         Page p = (Page) scoreList;
